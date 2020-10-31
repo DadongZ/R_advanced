@@ -1,0 +1,52 @@
+---
+title: 'Advanced functions'
+date: "`r format(Sys.time())`"
+fontfamily: mathpazo
+fontsize: 11pt
+output: html_document
+author:
+    - name: Dadong Zhang
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, message=FALSE)
+
+```
+
+## components
+
+
+```{r}
+f02 <- function(x, y){
+    # a comment
+    x + y
+}
+
+formals(f02)
+body(f02)
+environment(f02)
+attr(f02, 'srcref')
+```
+
+## primitive
+
+```{r}
+typeof(sum)
+typeof(`[`)
+formals(sum);body(sum);environment(sum)
+
+```
+
+## lexical scoping
+- func masking: names defined inside a function mask names defined outside a function
+- Functions versus variables
+- A fresh start
+- Dynamic lookup
+
+```{r}
+i03 <- function(...) {
+      list(first = ..1, third = ..3)
+
+}
+str(i03(1, 2, 3))
+```
